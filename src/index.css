@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animated gradient text */
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient-text {
+  background-image: linear-gradient(90deg, #a3e635, #22d3ee, #f59e0b, #a3e635);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-move 6s ease infinite;
+}
+
+/* Logo flip animation - outside to in then flip back to text */
+@keyframes logoFlipOutsideToIn {
+  0% {
+    transform: scale(0.1) rotateY(180deg) rotateX(180deg);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(0.5) rotateY(90deg) rotateX(90deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2) rotateY(0deg) rotateX(0deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: scale(1.1) rotateY(-10deg) rotateX(-10deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1) rotateY(0deg) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes logoFlipToText {
+  0% {
+    transform: scale(1) rotateY(0deg) rotateX(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.1) rotateY(10deg) rotateX(10deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2) rotateY(0deg) rotateX(0deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: scale(0.5) rotateY(-90deg) rotateX(-90deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.1) rotateY(-180deg) rotateX(-180deg);
+    opacity: 0;
+  }
+}
+
+/* RK Eco Bags Premium Design System - Earthy, sustainable, premium aesthetic */
+
+@layer base {
+  :root {
+    /* Background & Surface Colors */
+    --background: 45 20% 97%;           /* Warm cream white */
+    --foreground: 150 25% 15%;          /* Deep forest green text */
+    --surface: 45 15% 95%;              /* Subtle off-white */
+    
+    /* Brand Colors - Deep Forest & Earth Tones */
+    --primary: 150 40% 25%;             /* Rich forest green */
+    --primary-foreground: 45 20% 97%;   /* Cream on green */
+    --primary-light: 150 35% 35%;       /* Lighter forest */
+    --primary-glow: 150 60% 45%;        /* Vibrant eco green */
+    
+    /* Secondary - Warm Earth Tones */
+    --secondary: 35 25% 75%;            /* Warm beige */
+    --secondary-foreground: 150 25% 15%; /* Forest text on beige */
+    --secondary-dark: 25 20% 55%;       /* Rich brown */
+    
+    /* Accent Colors */
+    --accent: 45 45% 85%;               /* Light cream */
+    --accent-foreground: 150 30% 20%;   /* Dark green text */
+    --accent-warm: 35 35% 65%;          /* Warm tan */
+    
+    /* Neutral Tones */
+    --muted: 35 15% 85%;                /* Soft beige */
+    --muted-foreground: 150 15% 40%;    /* Muted green */
+    --border: 35 20% 80%;               /* Subtle beige border */
+    --input: 35 15% 90%;                /* Light input background */
+    
+    /* Utility Colors */
+    --destructive: 5 75% 55%;           /* Warm red */
+    --destructive-foreground: 45 20% 97%;
+    --ring: 150 40% 25%;                /* Focus ring green */
+    
+    /* Design System Extensions */
+    --gradient-earth: linear-gradient(135deg, hsl(150 40% 25%), hsl(150 60% 45%));
+    --gradient-sunset: linear-gradient(135deg, hsl(35 45% 65%), hsl(45 35% 75%));
+    --gradient-hero: linear-gradient(180deg, hsl(150 40% 25% / 0.9), hsl(150 25% 15% / 0.95));
+    --gradient-organic: radial-gradient(ellipse at center, hsl(150 45% 30%), hsl(150 35% 20%));
+    
+    /* Shadows & Effects */
+    --shadow-earth: 0 4px 20px hsl(150 25% 15% / 0.1);
+    --shadow-elevated: 0 8px 32px hsl(150 30% 20% / 0.15);
+    --shadow-glow: 0 0 40px hsl(150 60% 45% / 0.3);
+    --shadow-organic: 0 10px 30px -5px hsl(35 25% 30% / 0.2);
+    
+    /* Typography Scale */
+    --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-organic: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    
+    /* Spacing & Layout */
+    --section-padding: 5rem;
+    --container-width: 1200px;
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
