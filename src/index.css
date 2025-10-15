@@ -65,6 +65,16 @@
   }
 }
 
+/* Logo shine animation - diagonal sweep effect */
+@keyframes logoShine {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
 /* RK Eco Bags Premium Design System - Earthy, sustainable, premium aesthetic */
 
 @layer base {

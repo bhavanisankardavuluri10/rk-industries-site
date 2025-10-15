@@ -97,7 +97,7 @@ export const HeroSection = () => {
           <img
             src="/LOGO.png"
             alt="Logo"
-            className={`mx-auto w-[200px] h-[200px] object-contain transition-all duration-1200 ${
+            className={`mx-auto w-[260px] h-[260px] sm:w-[220px] sm:h-[220px] md:w-[280px] md:h-[280px] object-contain transition-all duration-1200 ${
               isLoaded ? 'animate-logo-flip-outside-in' : 'opacity-0 scale-0'
             }`}
             onAnimationEnd={(e) => {
@@ -110,7 +110,7 @@ export const HeroSection = () => {
             }}
           />
         </div>
-        
+
         {/* Main Headline */}
         <div className="space-y-6">
           <h1 
@@ -136,9 +136,10 @@ export const HeroSection = () => {
               isLoaded ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
             }`}
           >
-            <Button 
-              variant="secondary" 
+            <Button
+              variant="secondary"
               size="lg"
+              onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-primary-glow hover:bg-primary-light text-primary-foreground font-semibold px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-glow animate-pulse-glow"
             >
               Explore Products

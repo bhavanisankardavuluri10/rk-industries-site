@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -34,16 +34,25 @@ export const Footer = () => {
             
             <div className="space-y-3">
               <div className="flex items-center text-primary-foreground/70">
-                <MapPin className="w-5 h-5 mr-3 text-primary-glow flex-shrink-0" />
-                <span className="text-sm">123 Sustainable Street, Green City, EC 12345</span>
-              </div>
-              <div className="flex items-center text-primary-foreground/70">
                 <Phone className="w-5 h-5 mr-3 text-primary-glow flex-shrink-0" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <a href="tel:+919573138858" className="text-sm hover:text-primary-glow transition-colors">
+                  +91 95731 38858
+                </a>
               </div>
               <div className="flex items-center text-primary-foreground/70">
                 <Mail className="w-5 h-5 mr-3 text-primary-glow flex-shrink-0" />
-                <span className="text-sm">info@rkindustries.com</span>
+                <a href="mailto:rkindustriespdp@gmail.com" className="text-sm hover:text-primary-glow transition-colors">
+                  rkindustriespdp@gmail.com
+                </a>
+              </div>
+              <div className="flex items-start text-primary-foreground/70 mt-4 pt-4 border-t border-primary-foreground/10">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-2 h-2 bg-primary-glow rounded-full" />
+                </div>
+                <div className="ml-3">
+                  <p className="text-sm font-semibold text-primary-foreground">Contact Person:</p>
+                  <p className="text-sm">MR PV Rao</p>
+                </div>
               </div>
             </div>
           </div>
@@ -53,19 +62,18 @@ export const Footer = () => {
             <h3 className="font-semibold text-lg mb-6 font-display">Quick Links</h3>
             <ul className="space-y-3">
               {[
-                'Our Products',
-                'Custom Orders', 
-                'Bulk Pricing',
-                'About Us',
-                'Sustainability',
-                'Contact'
+                { name: 'Home', href: '#home' },
+                { name: 'Products', href: '#products' },
+                { name: 'About', href: '#about' },
+                { name: 'Impact', href: '#impact' },
+                { name: 'Contact', href: '#contact' }
               ].map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
+                  <a
+                    href={link.href}
                     className="text-primary-foreground/70 hover:text-primary-glow transition-colors duration-300 text-sm"
                   >
-                    {link}
+                    {link.name}
                   </a>
                 </li>
               ))}
@@ -107,14 +115,17 @@ export const Footer = () => {
             <div className="flex items-center space-x-4">
               <span className="text-sm text-primary-foreground/70 mr-4">Follow Us:</span>
               {[
-                { icon: <Facebook className="w-5 h-5" />, href: "#" },
-                { icon: <Instagram className="w-5 h-5" />, href: "#" },
-                { icon: <Linkedin className="w-5 h-5" />, href: "#" },
-                { icon: <Twitter className="w-5 h-5" />, href: "#" }
+                { icon: <Twitter className="w-5 h-5" />, href: "https://x.com/_rk_industries_", label: "Twitter" },
+                { icon: <Youtube className="w-5 h-5" />, href: "https://www.youtube.com/@R.K_INDUSTRIES_OFFICAL", label: "YouTube" },
+                { icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/rk_industries_offical/", label: "Instagram" },
+                { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" }
               ].map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
                   className="p-2 bg-primary-foreground/10 rounded-lg text-primary-foreground/70 hover:text-primary-glow hover:bg-primary-foreground/15 transition-all duration-300 hover:scale-110"
                 >
                   {social.icon}

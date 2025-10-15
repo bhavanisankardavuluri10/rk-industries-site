@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Leaf, Mail, Phone, MessageCircle } from 'lucide-react';
+import { ArrowRight, Leaf, Mail, Phone, MessageCircle, MapPin, ExternalLink } from 'lucide-react';
 
 export const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -152,6 +152,106 @@ export const CTASection = () => {
                     )}
                   </div>
                 </form>
+
+                {/* Contact Information Below Form */}
+                <div className="mt-8 pt-6 border-t border-foreground/10">
+                  <h4 className="text-lg font-semibold text-foreground mb-4 font-display">
+                    Or reach us directly:
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 text-foreground/80">
+                      <div className="flex-shrink-0 w-10 h-10 bg-primary-glow/10 rounded-full flex items-center justify-center">
+                        <Phone className="w-5 h-5 text-primary-glow" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">Call us</p>
+                        <a
+                          href="tel:+919573138858"
+                          className="text-base font-medium hover:text-primary-glow transition-colors"
+                        >
+                          +91 95731 38858
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 text-foreground/80">
+                      <div className="flex-shrink-0 w-10 h-10 bg-primary-glow/10 rounded-full flex items-center justify-center">
+                        <Mail className="w-5 h-5 text-primary-glow" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">Email us</p>
+                        <a
+                          href="mailto:rkindustriespdp@gmail.com"
+                          className="text-base font-medium hover:text-primary-glow transition-colors break-all"
+                        >
+                          rkindustriespdp@gmail.com
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 text-foreground/80 pt-2">
+                      <div className="flex-shrink-0 w-10 h-10 bg-primary-glow/10 rounded-full flex items-center justify-center">
+                        <MessageCircle className="w-5 h-5 text-primary-glow" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">Contact Person</p>
+                        <p className="text-base font-medium">MR PV Rao</p>
+                        <p className="text-sm text-muted-foreground">RK Industries</p>
+                      </div>
+                    </div>
+
+                    {/* Location Map Card */}
+                    <div className="mt-6 pt-6 border-t border-foreground/10">
+                      <div className="flex items-center gap-3 text-foreground/80 mb-4">
+                        <div className="flex-shrink-0 w-10 h-10 bg-primary-glow/10 rounded-full flex items-center justify-center">
+                          <MapPin className="w-5 h-5 text-primary-glow" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-muted-foreground">Visit us</p>
+                          <p className="text-base font-medium">Our Location</p>
+                        </div>
+                      </div>
+
+                      {/* Map Container */}
+                      <a
+                        href="https://maps.app.goo.gl/jFBksFnqjJgiiXbXA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block group relative rounded-2xl overflow-hidden border-2 border-primary-glow/20 hover:border-primary-glow/50 transition-all duration-300 shadow-md hover:shadow-xl"
+                      >
+                        {/* Google Maps Embed */}
+                        <div className="relative aspect-video bg-gray-100">
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6!2d78.486!3d17.385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDIzJzA2LjAiTiA3OMKwMjknMDkuNiJF!5e0!3m2!1sen!2sin!4v1234567890"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="absolute inset-0 pointer-events-none"
+                            title="RK Industries Location"
+                          />
+
+                          {/* Overlay with hover effect */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                          {/* Click to view overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="bg-white/95 backdrop-blur-sm rounded-full px-6 py-3 flex items-center gap-2 shadow-lg">
+                              <MapPin className="w-5 h-5 text-primary-glow" />
+                              <span className="text-sm font-semibold text-foreground">View on Google Maps</span>
+                              <ExternalLink className="w-4 h-4 text-primary-glow" />
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+
+                      {/* Location Text */}
+                      <p className="text-xs text-muted-foreground mt-3 text-center">
+                        Click map to get directions
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

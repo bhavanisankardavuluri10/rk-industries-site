@@ -5,6 +5,7 @@ import { SustainabilityTimeline } from '@/components/SustainabilityTimeline';
 import { WhyChooseRK } from '@/components/WhyChooseRK';
 import { ImpactStats } from '@/components/ImpactStats';
 import { CTASection } from '@/components/CTASection';
+import { ManufacturingVideo } from '@/components/ManufacturingVideo';
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 
@@ -19,6 +20,7 @@ const Index = () => {
       <WhyChooseRK />
       <ImpactStats />
       <CTASection />
+      <ManufacturingVideo />
       <Footer />
     </main>
   );

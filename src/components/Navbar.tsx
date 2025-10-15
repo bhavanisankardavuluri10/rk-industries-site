@@ -1,18 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const navItems = [
-  { name: 'Home', href: 'home' },
-  { name: 'Products', href: 'products' },
-  { name: 'About', href: 'about' },
-  { name: 'Impact', href: 'impact' },
-  { name: 'Contact', href: 'contact' },
+  { name: 'Home', href: 'home', isRoute: false },
+  { name: 'Products', href: 'products', isRoute: false },
+  { name: 'About', href: 'about', isRoute: false },
+  { name: 'Impact', href: 'impact', isRoute: false },
+  { name: 'Contact', href: 'contact', isRoute: false },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,13 +75,23 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={`#${item.href}`}
-                className={`relative transition-all duration-300 font-medium text-lg ${scrolled ? 'text-foreground' : 'text-white'} ${activeSection === item.href ? 'text-primary-glow drop-shadow-[0_0_5px_hsl(var(--primary-glow))]' : 'hover:text-primary-glow hover:drop-shadow-[0_0_5px_hsl(var(--primary-glow))]'}`}
-              >
-                {item.name}
-              </a>
+              item.isRoute ? (
+                <button
+                  key={item.name}
+                  onClick={() => navigate(item.href)}
+                  className={`relative transition-all duration-300 font-medium text-lg ${scrolled ? 'text-foreground' : 'text-white'} ${location.pathname === item.href ? 'text-primary-glow drop-shadow-[0_0_5px_hsl(var(--primary-glow))]' : 'hover:text-primary-glow hover:drop-shadow-[0_0_5px_hsl(var(--primary-glow))]'}`}
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <a
+                  key={item.name}
+                  href={`#${item.href}`}
+                  className={`relative transition-all duration-300 font-medium text-lg ${scrolled ? 'text-foreground' : 'text-white'} ${activeSection === item.href ? 'text-primary-glow drop-shadow-[0_0_5px_hsl(var(--primary-glow))]' : 'hover:text-primary-glow hover:drop-shadow-[0_0_5px_hsl(var(--primary-glow))]'}`}
+                >
+                  {item.name}
+                </a>
+              )
             ))}
           </div>
 
@@ -96,14 +109,27 @@ export const Navbar = () => {
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-border">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={`#${item.href}`}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${activeSection === item.href ? 'text-primary-glow bg-primary/10' : 'text-foreground hover:text-primary-glow hover:bg-primary/5'}`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </a>
+                item.isRoute ? (
+                  <button
+                    key={item.name}
+                    onClick={() => {
+                      navigate(item.href);
+                      setIsOpen(false);
+                    }}
+                    className={`w-full text-left block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${location.pathname === item.href ? 'text-primary-glow bg-primary/10' : 'text-foreground hover:text-primary-glow hover:bg-primary/5'}`}
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={`#${item.href}`}
+                    className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${activeSection === item.href ? 'text-primary-glow bg-primary/10' : 'text-foreground hover:text-primary-glow hover:bg-primary/5'}`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
             </div>
           </div>

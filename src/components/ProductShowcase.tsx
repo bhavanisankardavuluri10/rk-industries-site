@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ShoppingBag, Recycle, Heart } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import ecoCollection from '@/assets/eco-bags-collection.jpg';
 
 interface Product {
@@ -32,6 +33,7 @@ const products: Product[] = [
 ];
 
 export const ProductShowcase = () => {
+  const navigate = useNavigate();
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
   const sectionRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -136,8 +138,8 @@ export const ProductShowcase = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Ready to make the switch to sustainable bags?
           </p>
-          <Button 
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          <Button
+            onClick={() => navigate('/products')}
             className="inline-flex items-center space-x-2 bg-primary-glow hover:bg-primary-light text-primary-foreground font-semibold px-6 py-3 rounded-full transition-colors"
           >
             <span>Order Now</span>
