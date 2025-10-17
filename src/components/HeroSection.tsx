@@ -61,7 +61,7 @@ export const HeroSection = () => {
   );
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Hero Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -72,7 +72,7 @@ export const HeroSection = () => {
       />
       
       {/* Animated Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-80" />
+      <div className="absolute inset-0 opacity-80" />
       
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
