@@ -12,26 +12,35 @@ interface Product {
 }
 
 const products: Product[] = [
-  {
-    icon: <ShoppingBag className="w-8 h-8" />,
-    title: "Jute Tote Bags",
-    description: "Premium handwoven jute bags perfect for daily shopping and style.",
-    features: ["100% Natural Jute", "Reinforced Handles", "Multiple Sizes", "Custom Printing"]
-  },
-  {
-    icon: <Recycle className="w-8 h-8" />,
-    title: "Non-Woven Bags",
-    description: "Durable polypropylene alternatives that replace hundreds of plastic bags.",
-    features: ["Waterproof", "Easy to Clean", "Lightweight", "Long-lasting"]
-  },
-  {
-    icon: <Heart className="w-8 h-8" />,
-    title: "Cotton Canvas",
-    description: "Soft, organic cotton bags for the environmentally conscious consumer.",
-    features: ["Organic Cotton", "Soft Touch", "Machine Washable", "Elegant Design"]
-  }
+ {
+  icon: <ShoppingBag className="w-8 h-8" />,
+  title: "Biodegradable Carry Bags",
+  description: "Eco-friendly biodegradable bags designed for daily use — durable, compostable, and completely plastic-free.",
+  features: [
+    "100% Biodegradable Material",
+    "Available in W-Cut & D-Cut",
+    "Strong & Tear-Resistant",
+    "Custom Sizes & Printing Options"
+  ]
+},
+{
+  icon: <Recycle className="w-8 h-8" />,
+  title: "Non-Woven Bags",
+  description: "Durable polypropylene alternatives that replace hundreds of plastic bags.",
+  features: ["Waterproof", "Easy to Clean", "Lightweight", "Long-lasting"]
+},
+{
+  icon: <Heart className="w-8 h-8" />,
+  title: "Compostable Garbage Bags",
+  description: "High-quality compostable garbage bags made from eco-safe materials for clean and sustainable waste disposal.",
+  features: [
+    "Made from Plant-Based Materials",
+    "Fully Compostable & Non-Toxic",
+    "Leak-Proof & Durable",
+    "Safe for Home and Commercial Use"
+  ]
+}
 ];
-
 export const ProductShowcase = () => {
   const navigate = useNavigate();
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());

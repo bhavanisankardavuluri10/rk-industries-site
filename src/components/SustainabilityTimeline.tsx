@@ -11,33 +11,33 @@ interface TimelineStep {
 
 const timelineSteps: TimelineStep[] = [
   {
-    icon: <TreePine className="w-6 h-6" />,
-    title: "Sustainable Sourcing",
-    description: "We source premium jute and organic materials directly from certified eco-friendly farms.",
-    metric: "Farmers Supported",
-    value: "200+"
-  },
-  {
-    icon: <Sprout className="w-6 h-6" />,
-    title: "Eco Manufacturing", 
-    description: "Our zero-waste production process ensures every bag is crafted with minimal environmental impact.",
-    metric: "Carbon Footprint Reduction",
-    value: "85%"
-  },
-  {
-    icon: <ShoppingBag className="w-6 h-6" />,
-    title: "Reusable by Design",
-    description: "Engineered for repeated daily use with reinforced stitching and eco-durable materials.",
-    metric: "Reusability",
-    value: "1000+ Uses"
-  },
-  {
-    icon: <Globe className="w-6 h-6" />,
-    title: "Global Impact",
-    description: "Together with our customers, we're creating a worldwide movement towards sustainability.",
-    metric: "Plastic Bags Replaced",
-    value: "10000+"
-  }
+  icon: <TreePine className="w-6 h-6" />,
+  title: "Eco Material Sourcing",
+  description: "We use 100% biodegradable and compostable raw materials sourced from certified eco-friendly suppliers.",
+  metric: "Sustainable Materials Used",
+  value: "5+ Types"
+},
+{
+  icon: <Sprout className="w-6 h-6" />,
+  title: "Green Manufacturing",
+  description: "Our advanced zero-waste production ensures every biodegradable bag is made with minimal carbon emissions.",
+  metric: "Carbon Footprint Reduction",
+  value: "85%"
+},
+{
+  icon: <ShoppingBag className="w-6 h-6" />,
+  title: "Eco Durability",
+  description: "Designed for strength and reliability — every bag is durable, reusable, and safe for the environment after disposal.",
+  metric: "Reusability",
+  value: "1000+ Uses"
+},
+{
+  icon: <Globe className="w-6 h-6" />,
+  title: "Planet Impact",
+  description: "With every biodegradable bag, we reduce plastic waste and move closer to a cleaner, greener planet.",
+  metric: "Plastic Bags Replaced",
+  value: "10000+"
+}
 ];
 
 export const SustainabilityTimeline = () => {
